@@ -64,7 +64,7 @@ void printList(node* head){
     cout<<"NULL"<<endl;
 }
 int main(){
-    node* head = NULL;
+    node *head = NULL;
     int n;
     here:
     cout<<"1 : To insert node at Tail "<<endl;
