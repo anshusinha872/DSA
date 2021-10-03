@@ -50,9 +50,9 @@ int digiTrem(ll n,ll d){
             }
             else{
                 int second_occ =first_occ;
-                while(str[second_occ-1]=='8'){
+                while(second_occ>=1 && str[second_occ-1]=='8'){
                     if(str[second_occ-1]=='8')
-                        second_occ--;
+                            second_occ--;
                 }
                 if(second_occ==0){
                     for(int i=0;i<str.length();i++){
