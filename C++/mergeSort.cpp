@@ -19,7 +19,7 @@ void merge(int arr[],int l,int m,int r)
     int k=l;
     while(i<n1 && j<n2)
     {
-        if(a[i]<b[j])
+        if(a[i]>b[j])
         {
             arr[k]=a[i];
             i++;
