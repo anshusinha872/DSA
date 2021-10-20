@@ -1,24 +1,27 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-int main()
-{
-    int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++)
-        cin>>arr[i];
-    for(int i=1;i<n;i++)
-    {
-        int temp=arr[i];
+void insertionSort(vector<int>&vect){
+    for(int i=1;i<vect.size();i++){
         int j=i-1;
-        while(arr[j]>temp && j>=0)
-        {
-            arr[j+1]=arr[j];
+        int key = vect[i];
+        while(j>=0 && vect[j]>key){
+            vect[j+1]=vect[j];
             j--;
         }
-        arr[j+1]=temp;
+        vect[j+1]=key;
     }
-    for(int i=0;i<n;i++)
-        cout<<arr[i]<<" ";
+}
+int main(){
+    int n;
+    cin>>n;
+    vector<int>vect;
+    int input;
+    for(int i=0;i<n;i++){
+        cin>>input;
+        vect.push_back(input);
+    }
+    insertionSort(vect);
+    for(int i:vect)
+        cout<<i<<" ";
     return 0;
 }
