@@ -1,39 +1,36 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
-class node{
-    public:
-        int data;
-        node* next;
-};
-//function to print content stored in the linked list
-void printList(node* n){
-    while(n!=NULL){
-        cout<<n->data<<" ";
-        n= n->next;
+struct Node{
+    int data;
+    Node *next;
+    Node(int x){
+        data=x;
+        next=NULL;
     }
-    cout<<endl;
+};
+void printNode(Node *head){
+    Node *curr=head;
+    while (curr!=NULL)
+    {
+        cout<<curr->data<<" ";
+        curr=curr->next;
+    }
+}
+void PrintNodeRecustion(Node *head){
+    if(head==NULL)
+        return;
+    cout<<head->data<<" ";
+    PrintNodeRecustion(head->next);
 }
 int main(){
-    //creating three nodes
-    node* head;
-    node* second;
-    node* third;
-    //allocating memory for the nodes
-    head= new node;
-    second = new node;
-    third = new node;
-    //assigning data in the first node
-    head->data =1 ;
-    //link first node with second
-    head->next = second;
-    //assigning data in the second node
-    second->data  = 2;
-    //link second node with the third node
-    second->next = third;
-    //assigning data in the third node
-    third->data = 3;
-    //third node is not pointing to any memory address that's why we assign NULL in the next
-    third->next= NULL;
-    printList(head);
+    Node *head=new Node(10);
+    Node *temp = new Node(20);
+    Node *temp1= new Node(30);
+    Node *temp2= new Node(40);
+    head->next=temp;
+    temp->next=temp1;
+    temp1->next=temp2;
+    temp2->next=NULL;
+    printNode(head);
     return 0;
 }

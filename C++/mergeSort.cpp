@@ -1,11 +1,11 @@
 #include<iostream>
 using namespace std;
-void merge(int arr[],int l,int m,int r)
+void merge(float arr[],int l,int m,int r)
 {
     int n1= m-l+1;
     int n2=r-m;
-    int a[n1];
-    int b[n2];
+    float a[n1];
+    float b[n2];
     for(int i=0;i<n1;i++)
     {
         a[i]=arr[l+i];
@@ -45,7 +45,7 @@ void merge(int arr[],int l,int m,int r)
             j++;
     }
 }
-void mergeSort(int arr[],int l,int r)
+void mergeSort(float arr[],int l,int r)
 {
     int m=(l+r)/2;
     if(l<r)
@@ -59,7 +59,7 @@ int main()
 {
     int n;
     cin>>n;
-    int arr[n];
+    float arr[n];
     for(int i=0;i<n;i++)
     {
         cin>>arr[i];
